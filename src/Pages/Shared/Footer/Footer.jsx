@@ -1,11 +1,11 @@
 import React from 'react';
-import '@fortawesome/fontawesome-free/css/all.min.css'; // Ensure this line is included
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-screen-xl mx-auto flex justify-between p-8">
-        <div>
+    <footer className="bg-gray-900 text-white font-sans">
+      <div className="max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between p-8">
+        <div className="mb-8 md:mb-0">
           <h2 className="text-lg font-bold mb-4">CONTACT US</h2>
           <p>123 ABS Street, Uni 21, Bangladesh</p>
           <p>+88 123456789</p>
@@ -17,13 +17,13 @@ const Footer = () => {
           <h2 className="text-lg font-bold mb-4">Follow US</h2>
           <p>Join us on social media</p>
           <div className="flex space-x-4 mt-2">
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a href="#" className="text-gray-400 hover:text-white transition">
               <i className="fab fa-facebook-f"></i>
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a href="#" className="text-gray-400 hover:text-white transition">
               <i className="fab fa-instagram"></i>
             </a>
-            <a href="#" className="text-gray-400 hover:text-white">
+            <a href="#" className="text-gray-400 hover:text-white transition">
               <i className="fab fa-twitter"></i>
             </a>
           </div>
