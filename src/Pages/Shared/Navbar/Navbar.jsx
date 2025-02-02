@@ -1,56 +1,74 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
 const Navbar = () => {
-    const navOptions = (
-      <>
-        <li><a>Item 1</a></li>
-        <li className="">
-          <a>
-            Parent
-          </a>
-         
-        </li>
-        <li><a>Item 3</a></li>
-      </>
-    );
-  
-    return (
-      <div>
-        <div className="navbar fixed z-10 bg-opacity-30 bg-black text-white max-w-screen-xl">
-          <div className="navbar-start">
-            <div className="dropdown">
-              <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h8m-8 6h16"
-                  />
-                </svg>
-              </div>
-              <ul
-                tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[2] mt-3 w-52 p-2 shadow"
+  const navOptions = (
+    <>
+      <li>
+        <Link to="/" className="text-black">
+          Home
+        </Link>
+      </li>
+
+      <li>
+        <Link to="/menu" className="text-black">
+          Our Menu
+        </Link>
+      </li>
+    </>
+  );
+  return (
+    <div>
+      {/* Navbar */}
+      <div className="navbar fixed z-10 bg-opacity-30 bg-black text-white max-w-screen-xl mx-auto">
+        {/* Navbar Start (Logo + Mobile Menu Button) */}
+        <div className="navbar-start">
+          {/* Mobile Menu Button */}
+          <div className="dropdown lg:hidden">
+            <label tabIndex={0} className="btn btn-ghost">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                {navOptions}
-              </ul>
-            </div>
-            <a className="btn btn-ghost text-xl">Crave</a>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            </label>
+            {/* Mobile Dropdown Menu */}
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-white text-black rounded-box z-[2] mt-3 w-52 p-2 shadow-lg"
+            >
+              {navOptions}
+            </ul>
           </div>
-          <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">{navOptions}</ul>
-          </div>
-          <div className="navbar-end">
-            <a className="btn">Button</a>
-          </div>
+          {/* Logo */}
+          <a href="/" className="btn btn-ghost text-xl">
+            Crave
+          </a>
+        </div>
+
+        {/* Navbar Center (Desktop Menu) */}
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">{navOptions}</ul>
+        </div>
+
+        {/* Navbar End (Button) */}
+        <div className="navbar-end">
+          <a href="#button" className="btn btn-primary">
+            Button
+          </a>
         </div>
       </div>
-    );
-  };
-  
-  export default Navbar;
+    </div>
+  );
+};
+
+export default Navbar;

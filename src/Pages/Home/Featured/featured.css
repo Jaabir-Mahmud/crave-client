@@ -1,0 +1,33 @@
+
+.parallax-bg {
+    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+  }
+  
+  
+  .featured-item {
+    position: relative;
+    min-height: 70vh; 
+  }
+  
+  .featured-item .btn {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .featured-item .btn:hover {
+    transform: scale(1.05);
+  }
+  
+ 
+  @media (max-width: 768px) {
+    .featured-item {
+      padding: 2rem;
+    }
+  
+    .parallax-bg {
+      background-attachment: scroll; 
+    }
+  }
